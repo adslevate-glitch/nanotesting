@@ -1,0 +1,266 @@
+/* Premium Google Fonts for Luxury Typography */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-white: #FFFFFF;
+    --color-sand: #F5F0E8;
+    --color-stone: #E8E0D0;
+    --color-stone-dark: #C8BCA8;
+    --color-graphite: #4A4A4A;
+    --color-black: #0A0A0A;
+    --color-gold: #B8960C;
+    --color-gold-light: #D4AF37;
+    --color-forest: #2D5016;
+    --color-ocean: #1B4F72;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FFFFFF;
+    color: #0A0A0A;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: #D4AF37;
+    color: #0A0A0A;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0A0A0A;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D4AF37;
+  }
+}
+
+@layer components {
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-cormorant {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-sans {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .text-gold {
+    color: #D4AF37;
+  }
+
+  .bg-gold {
+    background-color: #D4AF37;
+  }
+
+  .border-gold {
+    border-color: #D4AF37;
+  }
+
+  .luxury-btn {
+    @apply inline-flex items-center gap-3 px-8 py-4 border border-white/30 text-white text-sm font-light tracking-[0.2em] uppercase transition-all duration-500;
+    letter-spacing: 0.2em;
+  }
+
+  .luxury-btn:hover {
+    @apply bg-white text-black border-white;
+  }
+
+  .luxury-btn-dark {
+    @apply inline-flex items-center gap-3 px-8 py-4 border border-black/20 text-black text-sm font-light tracking-[0.2em] uppercase transition-all duration-500;
+  }
+
+  .luxury-btn-dark:hover {
+    @apply bg-black text-white border-black;
+  }
+
+  .luxury-btn-gold {
+    @apply inline-flex items-center gap-3 px-8 py-4 bg-transparent border text-sm font-light tracking-[0.2em] uppercase transition-all duration-500;
+    border-color: #D4AF37;
+    color: #D4AF37;
+  }
+
+  .luxury-btn-gold:hover {
+    background-color: #D4AF37;
+    color: #0A0A0A;
+  }
+
+  .section-label {
+    @apply text-xs font-light tracking-[0.4em] uppercase;
+    color: #D4AF37;
+  }
+
+  .section-divider {
+    @apply w-12 h-px bg-current opacity-30 my-6;
+  }
+
+  .property-card {
+    @apply relative overflow-hidden cursor-pointer;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .property-card:hover .property-card-img {
+    transform: scale(1.08);
+  }
+
+  .property-card-img {
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  /* Cinematic overlay */
+  .cinematic-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.1) 0%,
+      rgba(0,0,0,0.05) 30%,
+      rgba(0,0,0,0.3) 70%,
+      rgba(0,0,0,0.7) 100%
+    );
+  }
+
+  /* Parallax container */
+  .parallax-img {
+    transform: translateY(0);
+    transition: transform 0.1s linear;
+  }
+
+  /* Nav transition */
+  .nav-transparent {
+    background: transparent;
+  }
+
+  .nav-solid {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  /* Animated underline */
+  .animated-underline {
+    position: relative;
+  }
+
+  .animated-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #D4AF37;
+    transition: width 0.4s ease;
+  }
+
+  .animated-underline:hover::after {
+    width: 100%;
+  }
+
+  /* Fade in animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+  }
+
+  @keyframes scrollBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+  }
+
+  @keyframes pulse-gold {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease forwards;
+  }
+
+  .animate-scroll-bounce {
+    animation: scrollBounce 2s ease infinite;
+  }
+
+  .animate-pulse-gold {
+    animation: pulse-gold 2s ease infinite;
+  }
+
+  /* Input styling */
+  .luxury-input {
+    @apply w-full bg-transparent border-b border-white/20 py-3 text-white text-sm font-light placeholder-white/40 focus:outline-none focus:border-white/60 transition-colors duration-300;
+    letter-spacing: 0.05em;
+  }
+
+  .luxury-input-dark {
+    @apply w-full bg-transparent border-b border-black/20 py-3 text-black text-sm font-light placeholder-black/40 focus:outline-none focus:border-black/60 transition-colors duration-300;
+    letter-spacing: 0.05em;
+  }
+
+  /* Stat counter */
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    line-height: 1;
+  }
+}
